@@ -50,27 +50,27 @@ const NAVBAR_ITEMS = [
   {
     title: "О нас",
     link: "/about",
-    id: 1,
+    id: 2,
   },
   {
     title: "Категории",
     link: "/categories",
-    id: 1,
+    id: 3,
   },
   {
     title: "Контакты",
     link: "/contacts",
-    id: 1,
+    id: 4,
   },
   {
     title: "Гарантии",
     link: "/guarentees",
-    id: 1,
+    id: 5,
   },
   {
     title: "Maрки",
     link: "/cartModels",
-    id: 1,
+    id: 6,
   },
 ];
 
@@ -78,6 +78,10 @@ const Header = () => {
   const [features, setFeatures] = useState(false);
   const [all, setAll] = useState(false);
   const [active, setActive] = useState("header2-block4");
+  const { brands, getAllBrands } = useContext(partContext);
+  useEffect(() => {
+    getAllBrands();
+  }, []);
   const navToggle = () => {
     active === "header2-block4"
       ? setActive("header2-block4 nav-active")
@@ -165,26 +169,17 @@ const Header = () => {
                     {navLink.title}
                   </Link>
                 ))}
-                {/* <p
-                  onClick={() => {
-                    setFeatures(!features);
-                    setAll(false);
-                  }}
-                  className="header2-a"
-                >
-                  Марки
-                </p> */}
               </div>
               {features ? (
                 <div className="features">
                   <div className="features-block1">
                     {brands.map((item) => (
-                      <Link to={item.link}>
+                      <Link to={`/models/${item.id}`}>
                         <h4
                           onClick={() => setFeatures(false)}
                           className="features-h4"
                         >
-                          {item.name}
+                          {item.brand_name}
                         </h4>
                       </Link>
                     ))}

@@ -1,10 +1,12 @@
 import React from "react";
 import "./ToolsofBmw.css";
 import undefined from "../Images/image-not-found-scaled-1150x647.png";
-import { Card } from "antd";
+import { Card, List } from "antd";
 import { SettingOutlined, ShoppingCartOutlined } from "@ant-design/icons";
+import { Link } from "react-router-dom";
 const { Meta } = Card;
 const ToolsofBmw = ({ item }) => {
+  console.log(item.good_picture[0].picture);
   return (
     <div className="container">
       <div className="main-tool ">
@@ -15,18 +17,29 @@ const ToolsofBmw = ({ item }) => {
             width: 300,
           }}
           cover={
-            <img
+            <List
+              itemLayout="horizontal"
+              dataSource={item.good_picture}
               style={{ width: 300, height: 270 }}
-              alt="example"
-              src={item.img ? item.img : undefined}
+              renderItem={(item) => <img alt="example" src={item.picture} />}
             />
           }
           actions={[
-            <SettingOutlined key="setting" />,
+            <Link to={`/details/${item.id}`}>
+              <SettingOutlined key="setting" />
+            </Link>,
             <ShoppingCartOutlined key="shopping" className="shopping-icon" />,
           ]}
         >
-          <Meta title={item.title} description={"$" + item.category} />
+          <Meta
+            title={item.good_name}
+            description={
+              <div>
+                <h3>{item.description}</h3>
+                <h4>{"KGS " + item.price_kgs}</h4>
+              </div>
+            }
+          />
         </Card>
       </div>
     </div>
