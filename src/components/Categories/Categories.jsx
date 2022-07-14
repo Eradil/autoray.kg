@@ -1,40 +1,39 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import "./Categories.css";
-import { useNavigate } from "react-router-dom";
-import { categories } from "../../helpers/categorie";
 import { partContext } from "../../partsContext";
-import { useEffect } from "react";
+import { Link, useLocation, useSearchParams } from "react-router-dom";
 
 const Categories = () => {
-  const navigate = useNavigate();
-  const { getAllCategories, parts } = useContext(partContext);
+  const [searchParams, setSearchParams] = useSearchParams();
+  const { category, getAllCategories } = useContext(partContext);
+  const location = useLocation();
+  let loc = location.pathname.slice(21, location.pathname.length);
+
+  let local = loc.match(/[0-9]/g);
+  let arr = local.join("");
+  let arr1 = parseInt(arr);
+  console.log(arr1);
+
+  console.log(arr1);
+
   useEffect(() => {
     getAllCategories();
   }, []);
-  console.log(categories);
-
   return (
     <div className="categories_wrapper">
       <div className="categories_inner">
         <h2>Категории</h2>
         <div className="categories__card-wrapper">
-          {categories.map((item) =>
-            parts.map((category) =>
-              category.id === item.id ? (
-                <>
-                  <div className="categories_card-item">
-                    <img
-                      onClick={() => navigate(`${category.link}`)}
-                      className="categories_card-img"
-                      src={item.img}
-                      alt=""
-                    />
-                    <h3 className="category-item">{category.category_name}</h3>
-                  </div>
-                </>
-              ) : null
-            )
-          )}
+          {category.map((item) => (
+            <Link
+              to={`/models/${arr1}/categories/${item.id}/parts/${item.id}`}
+              key={item.id}
+            >
+              <div className="categories_card-item">
+                <h3 className="category-item">{item.category_name}</h3>
+              </div>
+            </Link>
+          ))}
         </div>
       </div>
     </div>

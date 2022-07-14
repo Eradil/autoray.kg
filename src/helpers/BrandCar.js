@@ -23,7 +23,7 @@ import ravon from "../components/ModelsCart/brendsCar/brend21.png";
 import kia from "../components/ModelsCart/brendsCar/brend22.png";
 import others from "../components/ModelsCart/brendsCar/brend23.png";
 import akkum from "../components/ModelsCart/brendsCar/brend24.png";
-export const brands = [
+export const brandes = [
   {
     img: mersedes,
     id: 7,
