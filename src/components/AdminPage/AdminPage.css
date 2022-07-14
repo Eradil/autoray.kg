@@ -1,0 +1,75 @@
+.admin_inner {
+  display: flex;
+  max-width: 100%;
+  width: 100%;
+  margin-top: 50px;
+}
+.admin_inner_block1 {
+  width: 20%;
+}
+.admin_inner_block2 {
+  display: flex;
+  flex-wrap: wrap;
+  width: 70%;
+  padding: 20px;
+}
+
+.admin_inner_btn {
+  border: 2px solid #e5e5e5;
+  padding: 9px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.5s;
+  font-weight: 500;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10px;
+}
+.admin_inner_btn:hover {
+  background-color: #ff2d37;
+  border: 2px solid #ff2d37;
+  color: white;
+}
+.form-brand select {
+  width: 275px;
+  height: 30px;
+  border: 1px solid #cecccc;
+  border-radius: 2px;
+  outline: none;
+}
+.form__selecting {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.span-select {
+  color: #f89da1;
+  font-size: 20px;
+  margin-right: 2px;
+}
+.form__select-text {
+  margin-right: 35px !important;
+  letter-spacing: 1px !important;
+  font-weight: normal;
+}
+.form__select-model {
+  margin-right: 25px !important;
+}
+.btn-form-select {
+  border: 1px solid rgb(215, 204, 204);
+  background: linear-gradient(to top, #f5f5f5, #d5d5d5);
+  padding: 10px 20px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  transition: 0.4s;
+  cursor: pointer;
+}
+.btn-form-select:hover {
+  cursor: pointer;
+  background: #ff2d37;
+  color: white;
+}

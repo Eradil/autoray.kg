@@ -1,0 +1,21 @@
+.select_model {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.models {
+  background-color: rgba(193, 193, 193);
+  height: 254px;
+  margin-top: 38px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 38px;
+  background-image: url(https://images.unsplash.com/photo-1576718388983-e3ab696f2b8f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fHJlZHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60);
+}
+
+.models-1 {
+  margin-bottom: 40px;
+  text-align: center;
+}
