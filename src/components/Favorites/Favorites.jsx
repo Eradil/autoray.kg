@@ -1,15 +1,9 @@
-import { Button, List } from "antd";
 import React, { useContext, useEffect } from "react";
 import { favContext } from "../../favContext";
-import { SettingOutlined, ShoppingCartOutlined } from "@ant-design/icons";
-import { Card } from "antd";
-import { Link } from "react-router-dom";
-import Meta from "antd/lib/card/Meta";
-import "../ToolsofBmw/ToolsofBmw.css";
+import "./Favorites.css";
 
 const Favorites = () => {
-  const { getCart2, fav, deleteFromCart, changeProductCount } =
-    useContext(favContext);
+  const { getCart2, fav, deleteFromCart } = useContext(favContext);
 
   const { favorite } = fav;
   useEffect(() => {
@@ -17,46 +11,25 @@ const Favorites = () => {
   }, []);
   return (
     <div className="container">
-      <div style={{ display: "flex" }} className="main-tool ">
-        <Card
-          className="card__border"
-          hoverable
-          style={{
-            width: 300,
-          }}
-          cover={
-            <List
-              itemLayout="horizontal"
-              dataSource={fav.favorite}
-              style={{ width: 300, height: 270 }}
-              renderItem={(item) => (
-                <div
-                  className="last_adaptive"
-                  style={{ marginTop: "20px", display: "flex" }}
-                >
-                  <p
-                    onClick={() => deleteFromCart(item.item.id)}
-                    style={{
-                      textAlign: "center",
-                      fontSize: "20px",
-                      cursor: "pointer",
-                    }}
-                  >
-                    x
-                  </p>
-                  <div className="list1">
-                    <img className="list_img" src={item.item.img} alt="" />
-                    <div className="list1_titles">
-                      <h1 className="list_h1">{item.item.good_name}</h1>
-                      <p className="list_p">{item.item.description}</p>
-                      <h1>${item.item.price_kgs}</h1>
-                    </div>
-                  </div>
-                </div>
-              )}
-            />
-          }
-        />
+      <div className="favorite_main">
+        {fav.favorite.map((item) => (
+          <div className="favorite_block">
+            {item.item.img ? (
+              <img src={item.item.img} alt="" />
+            ) : (
+              <img src="https://www.alfasolare.ru/a_solar_restyle/wp-content/themes/consultix/images/no-image-found-360x260.png" />
+            )}
+
+            <h1>{item.item.good_name}</h1>
+            <h4>{item.item.description}</h4>
+            <h1>{item.item.price_kgs}</h1>
+            <div>
+              <button onClick={() => deleteFromCart(item.item.id)}>
+                delete
+              </button>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );
