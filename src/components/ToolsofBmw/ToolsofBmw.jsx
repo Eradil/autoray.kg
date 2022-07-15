@@ -6,7 +6,6 @@ import { SettingOutlined, ShoppingCartOutlined } from "@ant-design/icons";
 import { Link } from "react-router-dom";
 const { Meta } = Card;
 const ToolsofBmw = ({ item }) => {
-  console.log(item.good_picture[0].picture);
   return (
     <div className="container">
       <div className="main-tool ">
