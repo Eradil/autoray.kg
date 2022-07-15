@@ -1,4 +1,7 @@
+import { HeartOutlined } from "@ant-design/icons";
+import { Tooltip } from "antd";
 import React from "react";
+import { Link } from "react-router-dom";
 import "./HeaderTop.css";
 
 const HeaderTop = () => {
@@ -54,7 +57,17 @@ const HeaderTop = () => {
                 </li>
               </a>
             </ul>
-            <div className="header__top-log"></div>
+            <div className="header__top-log">
+              <Link to="/favorites">
+                <Tooltip
+                  className="header__top-items"
+                  placement="bottom"
+                  title="Избранное"
+                >
+                  <HeartOutlined className="header_top_heart" />
+                </Tooltip>
+              </Link>
+            </div>
           </div>
         </div>
       </div>

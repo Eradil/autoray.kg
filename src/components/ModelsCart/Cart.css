@@ -28,7 +28,7 @@
 }
 @media (max-width: 320px) {
   .catalog-link img {
-    width: 250px;
+    width: 125px;
   }
 }
 .catalog-link:hover {

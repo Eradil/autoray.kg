@@ -17,6 +17,7 @@ import Models from "./Models/Models";
 import Details from "./Details/Details";
 import Cart from "./ModelsCart/Cart";
 import SearchByVin from "./SearchByVin/SearchByVin";
+import Favorites from "./Favorites/Favorites";
 
 const Routing = () => {
   return (
@@ -25,6 +26,7 @@ const Routing = () => {
       <Header />
       <Routes>
         <Route path="/admin" element={<AdminPage />} />
+        {/* <Route path="/favorites" element={<Favorites />} /> */}
 
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Forma />} />

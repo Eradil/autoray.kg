@@ -29,14 +29,18 @@ const Details = () => {
             <div className="details__main-left-right-border"></div>
             <div>
               <h3 className="details__main-left-h33">Информация о товаре</h3>
-              <h3 className="details__main-left-h3">{`Номер категории: ${onePart.category}`}</h3>
               <h3 className="details__main-left-h3">{`Vin-код: ${onePart.vincode}`}</h3>
             </div>
           </div>
           <div className="details__main-border"></div>
           <h3 className="details__main-left-price">
-            {`Цена: ${Math.ceil(onePart.price_kgs)} сом`}
+            {`Цена в сомах: ${Math.ceil(onePart.price_kgs)} сом`}
           </h3>
+          {onePart.price_usd ? (
+            <h3 className="details__main-left-price">
+              {`Цена в долларах: ${Math.ceil(onePart.price_usd)} $`}
+            </h3>
+          ) : null}
         </div>
       </div>
       <div className="details__desc">

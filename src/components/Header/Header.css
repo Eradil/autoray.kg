@@ -9,6 +9,7 @@
 .HeartFilled {
   font-size: 28px !important;
   margin-right: 30px !important;
+  color: #282828 !important;
 }
 .border__lines-12 {
   border-top: 2px solid #fd2d37;
@@ -18,6 +19,9 @@
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
+}
+.favorites_link:hover {
+  color: black;
 }
 .header-logo {
   width: 250px;
@@ -204,9 +208,9 @@ a:hover {
   line-height: 100%;
   height: 47px;
   background-color: #ff2d37;
-  border-radius: 5px;
   text-decoration: none;
   cursor: pointer;
+  border-radius: 5px;
 }
 .header2-a:hover {
   background-color: rgba(0, 0, 0, 0.1);
@@ -290,6 +294,7 @@ a:hover {
 }
 .header-h5 {
   margin-bottom: 0;
+  font-size: 14px;
 }
 
 @media (max-width: 1200px) {
@@ -328,7 +333,6 @@ a:hover {
   }
   .close {
     display: block;
-    margin-right: 20px;
     padding: 10px 0;
     font-size: 25px;
     font-weight: bold;
@@ -350,6 +354,7 @@ a:hover {
     flex-direction: column;
     transform: translateX(100%);
     transition: 0.5s ease-in;
+    z-index: 1000 !important;
   }
 
   .header2-a {
@@ -375,6 +380,11 @@ a:hover {
     border-left: 2px solid #e5e5e5;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
+  }
+}
+@media (max-width: 600px) {
+  .HeartFilled {
+    display: none;
   }
 }
 @media (max-width: 500px) {
@@ -407,6 +417,20 @@ a:hover {
     height: 40px;
   }
   .header-h5 {
-    font-size: 10px;
+    font-size: 13px;
+  }
+}
+@media (max-width: 400px) {
+  .ant-btn > .anticon + span,
+  .ant-btn > span + .anticon {
+    display: none;
+  }
+  .ant-btn-lg {
+    width: 40px;
+    font-size: 16px;
+    padding: 5px;
+    border-radius: 2px;
+    height: 30px;
+    margin-top: 5px;
   }
 }

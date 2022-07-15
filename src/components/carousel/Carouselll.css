@@ -1,4 +1,5 @@
 .carousel__images {
   width: 100%;
   max-width: 100%;
+  z-index: -1 !important;
 }

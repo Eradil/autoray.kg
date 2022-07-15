@@ -4,10 +4,13 @@ import "antd/dist/antd.css"; // import 'antd/dist/antd.css'; //
 
 import Routing from "./components/Routing";
 import PartsContextProvider from "./partsContext";
+import FavContextProvider from "./favContext";
 function App() {
   return (
     <PartsContextProvider>
-      <Routing />
+      <FavContextProvider>
+        <Routing />
+      </FavContextProvider>
     </PartsContextProvider>
   );
 }

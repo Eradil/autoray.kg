@@ -2,6 +2,8 @@ import React from "react";
 import "./ShopByCategories.css";
 import wheels from "../Images/4977.jpg";
 import videorecorder from "../Images/P2PDHX0.jpg";
+import oil from "../Images/oil.jpg";
+import thumb from "../Images/thumb.jpg";
 
 const ShopByCategories = () => {
   return (
@@ -23,7 +25,13 @@ const ShopByCategories = () => {
         <div className="shopByCategories__card">
           <div className="shopByCategories__divchik">
             <div className="shopByCategories__cards">
-              <div style={{ display: "inline-block", overflow: "hidden" }}>
+              <div
+                style={{
+                  width: "210px",
+                  display: "inline-block",
+                  overflow: "hidden",
+                }}
+              >
                 <img
                   className="shopByCategories__cards-img"
                   src={wheels}
@@ -49,7 +57,13 @@ const ShopByCategories = () => {
           </div>
           <div className="shopByCategories__divchik">
             <div className="shopByCategories__cards">
-              <div style={{ display: "inline-block", overflow: "hidden" }}>
+              <div
+                style={{
+                  width: "210px",
+                  display: "inline-block",
+                  overflow: "hidden",
+                }}
+              >
                 <img
                   className="shopByCategories__cards-img"
                   src={videorecorder}
@@ -77,10 +91,16 @@ const ShopByCategories = () => {
           </div>
           <div className="shopByCategories__divchik">
             <div className="shopByCategories__cards">
-              <div style={{ display: "inline-block", overflow: "hidden" }}>
+              <div
+                style={{
+                  width: "210px",
+                  display: "inline-block",
+                  overflow: "hidden",
+                }}
+              >
                 <img
                   className="shopByCategories__cards-img"
-                  src="https://blackgoldoil.ru/wp-content/uploads/2016/12/Castrol-Honilo-981.jpg"
+                  src={oil}
                   alt="image"
                 />
               </div>
@@ -103,10 +123,16 @@ const ShopByCategories = () => {
           </div>
           <div className="shopByCategories__divchik">
             <div className="shopByCategories__cards">
-              <div style={{ display: "inline-block", overflow: "hidden" }}>
+              <div
+                style={{
+                  width: "210px",
+                  display: "inline-block",
+                  overflow: "hidden",
+                }}
+              >
                 <img
                   className="shopByCategories__cards-img"
-                  src="https://autotopik.ru/wp-content/uploads/2014/06/main-12-900x570.jpg"
+                  src={thumb}
                   alt="image"
                 />
               </div>
@@ -129,7 +155,13 @@ const ShopByCategories = () => {
           </div>
           <div className="shopByCategories__divchik">
             <div className="shopByCategories__cards">
-              <div style={{ display: "inline-block", overflow: "hidden" }}>
+              <div
+                style={{
+                  width: "210px",
+                  display: "inline-block",
+                  overflow: "hidden",
+                }}
+              >
                 <img
                   className="shopByCategories__cards-img"
                   src="https://i0.wp.com/storemark.by/wp-content/uploads/2017/08/%D0%A0%D0%B5%D0%BC%D0%BE%D0%BD%D1%82-%D1%82%D0%BE%D1%80%D0%BC%D0%BE%D0%B7%D0%BD%D0%BE%D0%B9-%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%8B.jpg?fit=900%2C500"
@@ -157,7 +189,13 @@ const ShopByCategories = () => {
           </div>
           <div className="shopByCategories__divchik">
             <div className="shopByCategories__cards">
-              <div style={{ display: "inline-block", overflow: "hidden" }}>
+              <div
+                style={{
+                  width: "210px",
+                  display: "inline-block",
+                  overflow: "hidden",
+                }}
+              >
                 <img
                   className="shopByCategories__cards-img"
                   src="https://redtool.pro/images/thumbnails/698/611/detailed/2/%D0%BA%D0%B5%D0%B9%D1%81_%D0%BA%D0%B5%D1%82%D0%B5%D1%80_1.JPG"
