@@ -19,6 +19,9 @@
   align-items: center;
   flex-wrap: wrap;
 }
+.favorites_link:hover {
+  color: black;
+}
 .header-logo {
   width: 250px;
 }
@@ -204,7 +207,6 @@ a:hover {
   line-height: 100%;
   height: 47px;
   background-color: #ff2d37;
-  border-radius: 5px;
   text-decoration: none;
   cursor: pointer;
 }
@@ -290,6 +292,7 @@ a:hover {
 }
 .header-h5 {
   margin-bottom: 0;
+  font-size: 14px;
 }
 
 @media (max-width: 1200px) {
@@ -328,7 +331,6 @@ a:hover {
   }
   .close {
     display: block;
-    margin-right: 20px;
     padding: 10px 0;
     font-size: 25px;
     font-weight: bold;
@@ -377,6 +379,11 @@ a:hover {
     border-bottom-left-radius: 5px;
   }
 }
+@media (max-width: 600px) {
+  .HeartFilled {
+    display: none;
+  }
+}
 @media (max-width: 500px) {
   .header2-block4 {
     width: 100%;
@@ -407,6 +414,20 @@ a:hover {
     height: 40px;
   }
   .header-h5 {
-    font-size: 10px;
+    font-size: 13px;
+  }
+}
+@media (max-width: 400px) {
+  .ant-btn > .anticon + span,
+  .ant-btn > span + .anticon {
+    display: none;
+  }
+  .ant-btn-lg {
+    width: 40px;
+    font-size: 16px;
+    padding: 5px;
+    border-radius: 2px;
+    height: 30px;
+    margin-top: 5px;
   }
 }

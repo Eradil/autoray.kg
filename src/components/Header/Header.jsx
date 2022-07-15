@@ -2,9 +2,11 @@ import React, { useState } from "react";
 import "./Header.css";
 import image1 from "../Images/logo11.svg";
 import image2 from "../Images/search.png";
-import image3 from "../Images/menu.png";
+import image3 from "../Images/down.png";
 import image4 from "../Images/account.png";
-import image5 from "../Images/close.png";
+import image5 from "../Images/close123.svg";
+import image11 from "../Images/menu.png";
+
 import { Link, useLocation } from "react-router-dom";
 import { categories } from "../../helpers/categorie";
 import { useContext } from "react";
@@ -99,13 +101,19 @@ const Header = () => {
               </Link>
             </div>
             <div className="header1-block2">
-              <Tooltip placement="bottom" title="Избранное">
-                <HeartOutlined className="HeartFilled" />
-              </Tooltip>
+              <Link className="favorites_link" to="/favorites">
+                <Tooltip placement="bottom" title="Избранное">
+                  <HeartOutlined className="HeartFilled" />
+                </Tooltip>
+              </Link>
 
               <Link to="/#">
                 <Tooltip placement="bottom" title="поиск по VIN-code">
-                  <Button icon={<SearchOutlined />} size="large">
+                  <Button
+                    className="header_search_1"
+                    icon={<SearchOutlined />}
+                    size="large"
+                  >
                     Поиск
                   </Button>
                 </Tooltip>
@@ -135,16 +143,10 @@ const Header = () => {
 
             <div className="header2-block2">
               <div className="header-media">
-                <input
-                  className="header-input2"
-                  type="text"
-                  placeholder="Поиск ..."
-                />
-                <img className="header-search-img2 " src={image2} alt="" />
                 <img
                   onClick={navToggle}
                   className="burger-block2"
-                  src={image3}
+                  src={image11}
                   alt=""
                 />
               </div>

@@ -1,12 +1,14 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import "./ToolsofBmw.css";
 import undefined from "../Images/image-not-found-scaled-1150x647.png";
 import { Card, List } from "antd";
 import { SettingOutlined, ShoppingCartOutlined } from "@ant-design/icons";
 import { Link } from "react-router-dom";
+import { favContext } from "../../favContext";
 const { Meta } = Card;
 const ToolsofBmw = ({ item }) => {
-  console.log(item.good_picture[0].picture);
+  const { addProductToCart2, checkItemInCard2 } = useContext(favContext);
+  const [checkItem2, setCheckItem2] = useState(checkItemInCard2(item.id));
   return (
     <div className="container">
       <div className="main-tool ">
@@ -28,7 +30,14 @@ const ToolsofBmw = ({ item }) => {
             <Link to={`/details/${item.id}`}>
               <SettingOutlined key="setting" />
             </Link>,
-            <ShoppingCartOutlined key="shopping" className="shopping-icon" />,
+            <ShoppingCartOutlined
+              onClick={() => {
+                addProductToCart2(item);
+                setCheckItem2(checkItemInCard2(item.id));
+              }}
+              key="shopping"
+              className="shopping-icon"
+            />,
           ]}
         >
           <Meta

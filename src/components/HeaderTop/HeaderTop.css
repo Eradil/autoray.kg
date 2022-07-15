@@ -12,6 +12,17 @@
 .telegram_from_top-header {
   fill: rgb(211, 211, 211);
 }
+.header_top_heart {
+  border: 0.7px solid rgb(211, 211, 211);
+  padding: 8px 12px;
+  margin-left: 10px;
+  padding-bottom: 0;
+  border-radius: 5px;
+  color: white;
+  height: 36px;
+  font-size: 20px;
+  display: none;
+}
 ul {
   margin-bottom: 0;
   list-style: none;
@@ -59,6 +70,12 @@ ul {
 .header__top-span {
   padding-top: 5px;
   color: rgb(211, 211, 211);
+}
+@media only screen and (max-width: 600px) {
+  .header_top_heart {
+    display: block;
+    margin-top: 10px;
+  }
 }
 @media only screen and (max-width: 480px) {
   .header__top-block {
