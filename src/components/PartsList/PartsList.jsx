@@ -15,7 +15,7 @@ const PartsList = () => {
   let local = loc.match(/[0-9]/g);
   let arr = local.join("");
   let arr1 = parseInt(arr);
-
+  console.log(parts + "part");
 
   useEffect(() => {
     getAllParts();

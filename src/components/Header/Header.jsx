@@ -53,11 +53,6 @@ const NAVBAR_ITEMS = [
     id: 2,
   },
   {
-    title: "Категории",
-    link: "/categories",
-    id: 3,
-  },
-  {
     title: "Контакты",
     link: "/contacts",
     id: 4,
@@ -105,9 +100,11 @@ const Header = () => {
 
               <Link to="/#">
                 <Tooltip placement="bottom" title="поиск по VIN-code">
-                  <Button icon={<SearchOutlined />} size="large">
-                    Поиск
-                  </Button>
+                  <Link to="/search">
+                    <Button icon={<SearchOutlined />} size="large">
+                      Поиск
+                    </Button>
+                  </Link>
                 </Tooltip>
               </Link>
             </div>

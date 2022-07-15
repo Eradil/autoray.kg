@@ -16,6 +16,7 @@ import Support from "./Support/Support";
 import Models from "./Models/Models";
 import Details from "./Details/Details";
 import Cart from "./ModelsCart/Cart";
+import SearchByVin from "./SearchByVin/SearchByVin";
 
 const Routing = () => {
   return (
@@ -35,6 +36,7 @@ const Routing = () => {
         <Route path="/guarentees" element={<Guearentees />} />
         <Route path="/models/:id" element={<Models />} />
         <Route path="/cartModels" element={<Cart />} />
+        <Route path="/search" element={<SearchByVin />} />
 
         <Route
           path="/models/:id/categories/:id/parts/:id"

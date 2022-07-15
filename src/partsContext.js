@@ -69,7 +69,7 @@ const PartsContextProvider = ({ children }) => {
   }
 
   async function getAllParts() {
-    let { data } = await axios(`${API}/goods/`);
+    let { data } = await axios(`${API}/goods/` + window.location.search);
     dispatch({
       type: GET_ALL,
       payload: data,

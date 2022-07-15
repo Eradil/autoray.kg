@@ -1,53 +1,48 @@
-// import { SearchOutlined } from "@ant-design/icons";
 import { Input } from "antd";
 import React, { useContext } from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { partContext } from "../../partsContext";
+import SearchCart from "./SearchCart";
 
 const SearchByVin = () => {
-  const { getAllGoods, parts } = useContext(partContext);
+  const { parts, getAllParts } = useContext(partContext);
   const [searchParams, setSearchParams] = useSearchParams();
-
   const [searchValue, setSearchValue] = useState(
     searchParams.get("q") ? searchParams.get("q") : ""
   );
-  const [vincode, setVincode] = useState([]);
+
   useEffect(() => {
-    getAllGoods();
+    getAllParts();
   }, []);
 
   useEffect(() => {
     setSearchParams({
-      searchValue,
+      search: searchValue,
+      vincode: searchValue,
     });
   }, [searchValue]);
 
   useEffect(() => {
-    getAllGoods();
+    getAllParts();
   }, [searchParams]);
-  console.log(searchValue);
-  return (
-    <div>
-      <Input.Search
-        placeholder="Search"
-        value={(searchValue, vincode)}
-        onChange={(e) => {
-          setSearchValue(e.target.value);
-          setVincode(e.target.value);
-        }}
-      />
 
-      <div className="block">
-        {parts.map((item) =>
-          searchValue || vincode == item.searchValue || item.good_name ? (
-            <div>
-              <h1>{item.vincode}</h1>
-              <h1>{item.good_name}</h1>
-            </div>
-          ) : null
-        )}
+  return (
+    <div className="container">
+      <div style={{ display: "flex", justifyContent: "center" }}>
+        <Input.Search
+          className="search__input"
+          placeholder="Поиск по VIN-коду..."
+          value={searchValue}
+          onChange={(e) => setSearchValue(e.target.value)}
+        />
+      </div>
+
+      <div className="esesse">
+        {parts.map((item) => (
+          <SearchCart key={item.id} item={item} />
+        ))}
       </div>
     </div>
   );
