@@ -130,7 +130,7 @@ const Footer = () => {
               <div class="copyright col-lg-8 col-md-8 col-sm-12 col-xs-12">
                 <p>
                   Autoray © 2022. All Rights Reserved. Designed by
-                  <a class="pixel" href="http://pixeldevs.club/">
+                  <a class="pixel" target={"_blank"} href="http://pixeldevs.club/">
                     pixeldevs.club
                   </a>
                 </p>
