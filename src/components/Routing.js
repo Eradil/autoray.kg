@@ -25,7 +25,7 @@ const Routing = () => {
       <Header />
       <Routes>
         <Route path="/admin" element={<AdminPage />} />
-        {/* <Route path="/favorites" element={<Favorites />} /> */}
+        <Route path="/favorites" element={<Favorites />} />
 
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Forma />} />

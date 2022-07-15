@@ -16,7 +16,6 @@ const PartsList = () => {
   let arr = local.join("");
   let arr1 = parseInt(arr);
 
-
   useEffect(() => {
     getAllParts();
   }, []);
@@ -26,7 +25,7 @@ const PartsList = () => {
   }, []);
 
   return (
-    <div>
+    <div className="esesse">
       {parts?.map((item) =>
         item.category == arr1 && item.car_model == regex ? (
           <ToolsofBmw key={item.id} item={item} />
