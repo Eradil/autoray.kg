@@ -102,7 +102,7 @@ const Header = () => {
                 </Tooltip>
               </Link>
 
-              <Link to="/#">
+              <Link to="/search">
                 <Tooltip placement="bottom" title="поиск по VIN-code">
                   <Button
                     className="header_search_1"
