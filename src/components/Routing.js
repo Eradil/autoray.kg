@@ -10,7 +10,6 @@ import Categories from "./Categories/Categories";
 import HeaderTop from "./HeaderTop/HeaderTop";
 import AboutUs from "./AboutUs/AboutUs";
 import Contacts from "./Contacts/Contacts";
-import AdminPage from "./AdminPage/AdminPage";
 import PartsList from "./PartsList/PartsList";
 import Support from "./Support/Support";
 import Models from "./Models/Models";
@@ -26,7 +25,6 @@ const Routing = () => {
       <HeaderTop />
       <Header />
       <Routes>
-        <Route path="/admin" element={<AdminPage />} />
         <Route path="/favorites" element={<Favorites />} />
         <Route path="/category/:id" element={<OneCategory />} />
         <Route path="/" element={<Home />} />

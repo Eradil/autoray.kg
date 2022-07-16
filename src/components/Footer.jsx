@@ -1,5 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Footer.css";
+import { categories } from "../helpers/categorie";
 
 const Footer = () => {
   return (
@@ -106,26 +108,15 @@ const Footer = () => {
                     <div class="module clearfix">
                       <h3 class="modtitle">Категории</h3>
                       <div class="modcontent">
-                        <ul class="menu">
-                          <li>
-                            <a href="#">Тормозная система</a>
-                          </li>
-                          <li>
-                            <a href="#">Бачки, Патрубки,воздуховоды</a>
-                          </li>
-                          <li>
-                            <a href="#">Системы Кондиционироания</a>
-                          </li>
-                          <li>
-                            <a href="#">Топливная система</a>
-                          </li>
-                          <li>
-                            <a href="#">Стекла</a>
-                          </li>
-                          <li>
-                            <a href="#">Электроника</a>
-                          </li>
-                        </ul>
+                        {categories.slice(5, 11).map((item) => (
+                          <ul class="menu">
+                            <Link to={`/category/${item.id}`}>
+                              <li key={item.id} className="footer__liteg">
+                                {item.title}
+                              </li>
+                            </Link>
+                          </ul>
+                        ))}
                       </div>
                     </div>
                   </div>
@@ -149,15 +140,10 @@ const Footer = () => {
                   </a>
                 </p>
               </div>
-              <div class="payment-w col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                {/* <img src="image/catalog/demo/payment/payment.png" alt="imgpayment"> */}
-              </div>
+              <div class="payment-w col-lg-4 col-md-4 col-sm-12 col-xs-12"></div>
             </div>
           </div>
         </div>
-        {/* <div class="back-to-top">
-          <i class="fa fa-angle-up"></i>
-        </div> */}
       </footer>
     </div>
   );

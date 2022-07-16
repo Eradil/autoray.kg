@@ -27,6 +27,7 @@ const OneCategory = () => {
 
   useEffect(() => {
     getAllParts();
+    window.scrollTo(0, 0);
   }, [searchParams]);
   return (
     <div className="container">
