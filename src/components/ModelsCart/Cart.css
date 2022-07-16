@@ -16,6 +16,11 @@
     width: 180px;
   }
 }
+@media (max-width: 445px) {
+  .catalog-link img {
+    width: 170px;
+  }
+}
 @media (max-width: 426px) {
   .catalog-link img {
     width: 130px;

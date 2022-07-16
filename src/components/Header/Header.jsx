@@ -69,11 +69,11 @@ const NAVBAR_ITEMS = [
     link: "/guarentees",
     id: 5,
   },
-  {
-    title: "Maрки",
-    link: "/cartModels",
-    id: 6,
-  },
+  // {
+  //   title: "Maрки",
+  //   link: "/cartModels",
+  //   id: 6,
+  // },
 ];
 
 const Header = () => {
@@ -160,6 +160,10 @@ const Header = () => {
 
                 {NAVBAR_ITEMS.map((navLink) => (
                   <Link
+                    onClick={() => {
+                      navToggle();
+                      setAll(false);
+                    }}
                     className={
                       location.pathname === navLink.link
                         ? "header2-active"

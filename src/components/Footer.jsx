@@ -19,8 +19,18 @@ const Footer = () => {
                       </li>
                       <li>
                         <span class="icon pe-7s-call"></span>
-                        <a className="forText" href="tel:+996501081998">
-                          +996 (501) 081-998
+                        <a className="forText" href="tel:+996504253345">
+                          +996 (504) 253-345
+                        </a>
+                      </li>
+                      <li>
+                        <a className="forText" href="tel:+996880253545">
+                          +996 (880) 253-545
+                        </a>
+                      </li>
+                      <li>
+                        <a className="forText" href="tel:+996221253545">
+                          +996 (221) 253-545
                         </a>
                       </li>
                       <li>

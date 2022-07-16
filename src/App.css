@@ -12,7 +12,80 @@
   display: flex;
   justify-content: space-between;
 }
+/* country */
+.country {
+  margin-top: 70px;
+}
+.country-block {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
 
+.country-block a {
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.country-block a:hover {
+  opacity: 0.8;
+}
+
+.country-block img {
+  max-width: 250px;
+  height: auto;
+  display: flex;
+  margin: 0 auto;
+}
+.ant-carousel .slick-dots li button {
+  display: none !important;
+}
+
+@media (max-width: 675px) {
+  .country-block img {
+    max-width: 225px;
+  }
+}
+@media (max-width: 610px) {
+  .country-block img {
+    max-width: 155px;
+  }
+}
+@media (max-width: 510px) {
+  .country-block img {
+    max-width: 155px;
+  }
+}
+@media (max-width: 445px) {
+  .country-block img {
+    max-width: 155px;
+  }
+}
+@media (max-width: 437px) {
+  .country-block img {
+    max-width: 145px;
+  }
+}
+@media (max-width: 415px) {
+  .country-block img {
+    max-width: 135px;
+  }
+}
+@media (max-width: 388px) {
+  .country-block img {
+    max-width: 125px;
+  }
+}
+@media (max-width: 363px) {
+  .country-block img {
+    max-width: 115px;
+  }
+}
+@media (max-width: 337px) {
+  .country-block img {
+    max-width: 100px;
+  }
+}
 @media (max-width: 500px) {
   .container {
     width: 90%;
