@@ -18,7 +18,7 @@
 }
 
 .about_cols_2 {
-  margin-left: 30px;
+  margin-left: 70px;
 }
 
 .about_cols_2_collapse {
@@ -43,13 +43,34 @@
 }
 
 .about-3_1-title {
+  text-align: center;
   color: rgb(162, 157, 157);
 }
 
 .ant-collapse-header-text {
   display: block !important;
 }
-
+.about__panel {
+  width: 100%;
+  min-height: 70px;
+  background-color: #ff2d37;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  padding: 0 40px 0 10px;
+  margin-bottom: 20px;
+}
+.about__panel-img {
+  width: 40px;
+  height: 40px;
+}
+.about__panel-text {
+  color: white;
+  font-size: large;
+  padding-left: 20px;
+  align-items: center;
+  padding-top: 15px;
+}
 @media (max-width: 767px) {
   .about_cols {
     display: flex;
