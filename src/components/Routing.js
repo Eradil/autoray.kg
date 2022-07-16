@@ -16,6 +16,7 @@ import Support from "./Support/Support";
 import Models from "./Models/Models";
 import Details from "./Details/Details";
 import Cart from "./ModelsCart/Cart";
+import SearchByVin from "./SearchByVin/SearchByVin";
 
 const Routing = () => {
   return (
@@ -24,6 +25,7 @@ const Routing = () => {
       <Header />
       <Routes>
         <Route path="/admin" element={<AdminPage />} />
+        <Route path="/search" element={<SearchByVin />} />
 
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Forma />} />

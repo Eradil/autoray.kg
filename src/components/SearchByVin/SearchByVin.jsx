@@ -1,54 +1,45 @@
-// import { SearchOutlined } from "@ant-design/icons";
 import { Input } from "antd";
 import React, { useContext } from "react";
 import { useEffect } from "react";
 import { useState } from "react";
-import { useSearchParams } from "react-router-dom";
 import { partContext } from "../../partsContext";
 
 const SearchByVin = () => {
-  const { getAllGoods, parts } = useContext(partContext);
-  const [searchParams, setSearchParams] = useSearchParams();
-
-  const [searchValue, setSearchValue] = useState(
-    searchParams.get("q") ? searchParams.get("q") : ""
-  );
-  const [vincode, setVincode] = useState([]);
+  const { getAllParts, parts } = useContext(partContext);
+  const [searchValue, setSearchValue] = useState("");
   useEffect(() => {
-    getAllGoods();
+    getAllParts();
   }, []);
+  console.log(parts);
+  const products = parts
+    .filter((items) => {
+      if (
+        items.good_name.toLowerCase().includes(searchValue.toLowerCase()) ||
+        items.vincode.includes(searchValue)
+      ) {
+        return true;
+      }
+      return false;
+    })
+    .map((item) => (
+      <div key={item.id}>
+        <h1>{item.good_name}</h1>
+        <h3>{item.vincode}</h3>
+      </div>
+    ));
 
-  useEffect(() => {
-    setSearchParams({
-      searchValue,
-    });
-  }, [searchValue]);
-
-  useEffect(() => {
-    getAllGoods();
-  }, [searchParams]);
-  console.log(searchValue);
   return (
-    <div>
+    <div className="container">
       <Input.Search
         placeholder="Search"
-        value={(searchValue, vincode)}
+        value={searchValue}
+        style={{ width: "25vw", margin: "20px 0" }}
         onChange={(e) => {
           setSearchValue(e.target.value);
-          setVincode(e.target.value);
         }}
       />
 
-      <div className="block">
-        {parts.map((item) =>
-          searchValue || vincode == item.searchValue || item.good_name ? (
-            <div>
-              <h1>{item.vincode}</h1>
-              <h1>{item.good_name}</h1>
-            </div>
-          ) : null
-        )}
-      </div>
+      <div className="block">{products}</div>
     </div>
   );
 };

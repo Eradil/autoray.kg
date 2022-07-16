@@ -54,6 +54,7 @@ const PartsContextProvider = ({ children }) => {
     dispatch({
       type: GET_ONE_MODEL,
       payload: data,
+      productsCount: 0,
     });
   }
 
@@ -92,6 +93,7 @@ const PartsContextProvider = ({ children }) => {
         category: state.category,
         parts: state.parts,
         onePart: state.onePart,
+        productsCount: state.productsCount,
         getAllBrands,
         getAllModels,
         getAllCategories,

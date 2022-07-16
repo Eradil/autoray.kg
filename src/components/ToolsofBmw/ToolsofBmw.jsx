@@ -1,12 +1,10 @@
 import React from "react";
 import "./ToolsofBmw.css";
-import undefined from "../Images/image-not-found-scaled-1150x647.png";
 import { Card, List } from "antd";
 import { SettingOutlined, ShoppingCartOutlined } from "@ant-design/icons";
 import { Link } from "react-router-dom";
 const { Meta } = Card;
 const ToolsofBmw = ({ item }) => {
-  console.log(item.good_picture[0].picture);
   return (
     <div className="container">
       <div className="main-tool ">
@@ -36,7 +34,7 @@ const ToolsofBmw = ({ item }) => {
             description={
               <div>
                 <h3>{item.description}</h3>
-                <h4>{"KGS " + item.price_kgs}</h4>
+                <h4>{"KGS " + Math.ceil(item.price_kgs)}</h4>
               </div>
             }
           />

@@ -103,7 +103,7 @@ const Header = () => {
                 <HeartOutlined className="HeartFilled" />
               </Tooltip>
 
-              <Link to="/#">
+              <Link to="/search">
                 <Tooltip placement="bottom" title="поиск по VIN-code">
                   <Button icon={<SearchOutlined />} size="large">
                     Поиск
