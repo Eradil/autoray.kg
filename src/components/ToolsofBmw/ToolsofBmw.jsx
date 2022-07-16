@@ -38,6 +38,10 @@ const ToolsofBmw = ({ item }) => {
                   addProductToCart2(item);
                   setCheckItem2(checkItemInCard2(item.id));
                 }}
+                style={{
+                  fontSize: "25px",
+                  color: checkItem2 ? "red" : "none",
+                }}
                 key="shopping"
                 className="shopping-icon"
               />
