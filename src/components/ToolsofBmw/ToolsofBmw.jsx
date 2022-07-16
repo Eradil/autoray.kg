@@ -19,7 +19,6 @@ const ToolsofBmw = ({ item }) => {
   }, []);
   console.log(category);
   const params = useParams();
-  console.log(params.id + "params");
   console.log(category.id);
   const [checkItem2, setCheckItem2] = useState(checkItemInCard2(item.id));
   return (

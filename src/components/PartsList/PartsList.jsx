@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from "react";
 import { useLocation, useSearchParams } from "react-router-dom";
 import { partContext } from "../../partsContext";
 import ToolsofBmw from "../ToolsofBmw/ToolsofBmw";
+import "./PartList.css";
 
 const PartsList = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -25,12 +26,14 @@ const PartsList = () => {
   }, []);
 
   return (
-    <div className="esesse">
-      {parts?.map((item) =>
-        item.category == arr1 && item.car_model == regex ? (
-          <ToolsofBmw key={item.id} item={item} />
-        ) : null
-      )}
+    <div className="container">
+      <div className="divskiy">
+        {parts?.map((item) =>
+          item.category == arr1 && item.car_model == regex ? (
+            <ToolsofBmw key={item.id} item={item} />
+          ) : null
+        )}
+      </div>
     </div>
   );
 };
