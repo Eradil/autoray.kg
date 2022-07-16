@@ -36,6 +36,11 @@ const NAVBAR_ITEMS = [
     link: "/guarentees",
     id: 5,
   },
+  {
+    title: "FAQ",
+    link: "/qa",
+    id: 6,
+  },
 ];
 
 const Header = () => {
