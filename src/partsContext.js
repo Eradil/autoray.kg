@@ -50,7 +50,6 @@ const PartsContextProvider = ({ children }) => {
 
   async function getAllModels() {
     let { data } = await axios.get(`${API}/car_models/`);
-    console.log(data);
     dispatch({
       type: GET_ONE_MODEL,
       payload: data,
@@ -61,7 +60,7 @@ const PartsContextProvider = ({ children }) => {
     let { data } = await axios.get(
       `${API}/good_categories/` + window.location.search
     );
-    console.log(data);
+
     dispatch({
       type: GET_ONE_CATEGORY,
       payload: data,

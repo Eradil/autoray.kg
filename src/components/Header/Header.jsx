@@ -15,34 +15,6 @@ import { useEffect } from "react";
 import { HeartOutlined, SearchOutlined } from "@ant-design/icons";
 import { Button, Tooltip } from "antd";
 
-const brands = [
-  {
-    name: "BMW",
-    id: 1,
-    link: "/bmw",
-  },
-  {
-    name: "Mersedes - Benz",
-    id: 2,
-    link: "/mersedes",
-  },
-  {
-    name: "Lexus",
-    id: 3,
-    link: "/Lexus",
-  },
-  {
-    name: "Toyota",
-    id: 4,
-    link: "/toyota",
-  },
-  {
-    name: "Mazda",
-    id: 5,
-    link: "/Mazda",
-  },
-];
-
 const NAVBAR_ITEMS = [
   {
     title: "Главная",
@@ -64,18 +36,14 @@ const NAVBAR_ITEMS = [
     link: "/guarentees",
     id: 5,
   },
-  // {
-  //   title: "Maрки",
-  //   link: "/cartModels",
-  //   id: 6,
-  // },
 ];
 
 const Header = () => {
   const [features, setFeatures] = useState(false);
   const [all, setAll] = useState(false);
   const [active, setActive] = useState("header2-block4");
-  const { brands, getAllBrands } = useContext(partContext);
+  const { brands, category, getAllBrands, getAllCategories } =
+    useContext(partContext);
   useEffect(() => {
     getAllBrands();
   }, []);
@@ -85,6 +53,7 @@ const Header = () => {
       : setActive("header2-block4");
   };
   const location = useLocation();
+
   return (
     <>
       <div className="header">
@@ -128,9 +97,11 @@ const Header = () => {
               {all ? (
                 <div className="all">
                   {categories.map((item) => (
-                    <span key={item.id} className="all-link">
-                      {item.title}
-                    </span>
+                    <Link to={`/category/${item.id}`}>
+                      <h4 key={item.id} className="all-link">
+                        {item.title}
+                      </h4>
+                    </Link>
                   ))}
                 </div>
               ) : null}

@@ -18,6 +18,7 @@ import Details from "./Details/Details";
 import Cart from "./ModelsCart/Cart";
 import SearchByVin from "./SearchByVin/SearchByVin";
 import Favorites from "./Favorites/Favorites";
+import OneCategory from "./OneCategory/OneCategory";
 
 const Routing = () => {
   return (
@@ -27,11 +28,12 @@ const Routing = () => {
       <Routes>
         <Route path="/admin" element={<AdminPage />} />
         <Route path="/favorites" element={<Favorites />} />
-
+        <Route path="/category/:id" element={<OneCategory />} />
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Forma />} />
         <Route path="/tools" element={<ToolsofBmw />} />
         <Route path="/models/:id/categories/:id" element={<Categories />} />
+
         <Route path="/details/:id" element={<Details />} />
         <Route path="/about" element={<AboutUs />} />
         <Route path="/contacts" element={<Contacts />} />

@@ -57,16 +57,16 @@ const Footer = () => {
                       <div class="modcontent">
                         <ul class="menu">
                           <li>
-                            <a href="#">О нас</a>
+                            <a href="/about">О нас</a>
                           </li>
                           <li>
-                            <a href="#">Контакты</a>
+                            <a href="/contacts">Контакты</a>
                           </li>
                           <li>
-                            <a href="#">Гарантии</a>
+                            <a href="/guarentees">Гарантии</a>
                           </li>
                           <li>
-                            <a className="forText" href="tel:+996501081998">
+                            <a className="forText" href="tel:+996504253345">
                               Поддержка 24/7
                             </a>
                           </li>
@@ -75,7 +75,7 @@ const Footer = () => {
                     </div>
                   </div>
                 </div>
-                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 col-style">
+                {/* <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 col-style">
                   <div class="box-account box-footer">
                     <div class="module clearfix">
                       <h3 class="modtitle">Основные партнеры</h3>
@@ -100,7 +100,7 @@ const Footer = () => {
                       </div>
                     </div>
                   </div>
-                </div>
+                </div> */}
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 col-clear">
                   <div class="box-service box-footer">
                     <div class="module clearfix">
@@ -140,7 +140,11 @@ const Footer = () => {
               <div class="copyright col-lg-8 col-md-8 col-sm-12 col-xs-12">
                 <p>
                   Autoray © 2022. All Rights Reserved. Designed by
-                  <a class="pixel" target={"_blank"} href="http://pixeldevs.club/">
+                  <a
+                    class="pixel"
+                    target={"_blank"}
+                    href="http://pixeldevs.club/"
+                  >
                     pixeldevs.club
                   </a>
                 </p>
