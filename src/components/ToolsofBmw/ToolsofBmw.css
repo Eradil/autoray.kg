@@ -11,35 +11,9 @@
 .card__border {
   border: 1px solid rgb(211, 205, 205) !important;
 }
-
-.tool-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 210px;
-  height: 300px;
-  border: 2px solid #e5e5e5;
-  border-bottom-left-radius: 2px;
-  border-bottom-right-radius: 2px;
-  margin: 10px;
-  outline: 1px solid rgba(255, 255, 255, 0.5);
-  outline-offset: -8px;
-  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-}
-.tool-card:hover .tool-card-img {
-  transform: scale(1.1);
-}
-.tool-card-title {
-  padding-top: 10px;
-}
-.tool-card-price {
-  font-size: 20px;
-  font-weight: bold;
-}
 .main-tool {
-  display: flex;
-  flex-wrap: wrap;
   margin-top: 50px;
-  justify-content: center;
+}
+.card__block-category {
+  color: #8792b6;
 }

@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from "react";
 import "./Categories.css";
 import { partContext } from "../../partsContext";
 import { Link, useLocation, useSearchParams } from "react-router-dom";
+import { categories } from "../../helpers/categorie";
 
 const Categories = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -18,19 +19,25 @@ const Categories = () => {
 
   useEffect(() => {
     getAllCategories();
+    window.scrollTo(0, 0);
   }, []);
   return (
     <div className="categories_wrapper">
       <div className="categories_inner">
         <h2>Категории</h2>
         <div className="categories__card-wrapper">
-          {category.map((item) => (
+          {categories.map((item) => (
             <Link
               to={`/models/${arr1}/categories/${item.id}/parts/${item.id}`}
               key={item.id}
             >
               <div className="categories_card-item">
-                <h3 className="category-item">{item.category_name}</h3>
+                <img
+                  src={item.img}
+                  alt="image"
+                  className=" categories_card-img"
+                />
+                <h3 className="category-item">{item.title}</h3>
               </div>
             </Link>
           ))}

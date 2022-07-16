@@ -21,6 +21,7 @@ const Models = () => {
 
   useEffect(() => {
     getAllModels();
+    window.scrollTo(0, 0);
   }, [searchParams]);
 
   return (

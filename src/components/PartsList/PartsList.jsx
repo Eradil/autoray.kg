@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { partContext } from "../../partsContext";
 import ToolsofBmw from "../ToolsofBmw/ToolsofBmw";
+import "./PartList.css";
 
 const PartsList = () => {
   const { parts, getAllParts } = useContext(partContext);
@@ -19,13 +20,19 @@ const PartsList = () => {
     getAllParts();
   }, []);
 
+  useEffect(() => {
+    getAllParts();
+  }, []);
+
   return (
-    <div>
-      {parts?.map((item) =>
-        item.category === arr1 && item.car_model === regex ? (
-          <ToolsofBmw key={item.id} item={item} />
-        ) : null
-      )}
+    <div className="container">
+      <div className="divskiy">
+        {parts?.map((item) =>
+          item.category == arr1 && item.car_model == regex ? (
+            <ToolsofBmw key={item.id} item={item} />
+          ) : null
+        )}
+      </div>
     </div>
   );
 };

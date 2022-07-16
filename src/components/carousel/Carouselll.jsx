@@ -4,7 +4,9 @@ import "./Carouselll.css";
 import carousel1 from "../Images/carousel1.png";
 import carousel2 from "../Images/carousel2.png";
 import carousel3 from "../Images/carousel3.png";
-import carousel4 from "../Images/carousel4.png";
+import carousel4 from "../Images/carousel1-320.png";
+import carousel5 from "../Images/carousel2-320.png";
+import carousel6 from "../Images/carousel3-320.png";
 
 const contentStyle = {
   height: "480px",
@@ -24,12 +26,15 @@ const Carouselll = () => {
       <Carousel autoplay>
         <div>
           <img className="carousel__images" src={carousel1} alt="image" />
+          <img className="carousel__images320" src={carousel4} alt="image" />
         </div>
         <div>
           <img className="carousel__images" src={carousel2} alt="image2" />
+          <img className="carousel__images320" src={carousel5} alt="image" />
         </div>
         <div>
           <img className="carousel__images" src={carousel3} alt="image3" />
+          <img className="carousel__images320" src={carousel6} alt="image" />
         </div>
       </Carousel>
     </div>

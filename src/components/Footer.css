@@ -30,6 +30,15 @@
   text-align: start;
   padding-left: 0;
 }
+.footer__liteg {
+  color: #878787;
+  font-size: 16px;
+  line-height: 35px;
+}
+.footer__liteg:hover {
+  color: #ff2d37;
+  font-size: 16px;
+}
 li a {
   font-size: 16px;
   border: 0 none;
@@ -50,4 +59,7 @@ li a:hover {
 .menu {
   text-align: start;
   padding-left: 0;
+}
+.module {
+  margin-top: 20px;
 }

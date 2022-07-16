@@ -2,11 +2,17 @@ import { Input } from "antd";
 import React, { useContext } from "react";
 import { useEffect } from "react";
 import { useState } from "react";
+import { useSearchParams } from "react-router-dom";
 import { partContext } from "../../partsContext";
+import SearchCart from "./SearchCart";
 
 const SearchByVin = () => {
-  const { getAllParts, parts } = useContext(partContext);
-  const [searchValue, setSearchValue] = useState("");
+  const { parts, getAllParts } = useContext(partContext);
+  const [searchParams, setSearchParams] = useSearchParams();
+  const [searchValue, setSearchValue] = useState(
+    searchParams.get("q") ? searchParams.get("q") : ""
+  );
+
   useEffect(() => {
     getAllParts();
   }, []);
@@ -28,18 +34,33 @@ const SearchByVin = () => {
       </div>
     ));
 
+  useEffect(() => {
+    setSearchParams({
+      search: searchValue,
+      vincode: searchValue,
+    });
+  }, [searchValue]);
+
+  useEffect(() => {
+    getAllParts();
+  }, [searchParams]);
+
   return (
     <div className="container">
-      <Input.Search
-        placeholder="Search"
-        value={searchValue}
-        style={{ width: "25vw", margin: "20px 0" }}
-        onChange={(e) => {
-          setSearchValue(e.target.value);
-        }}
-      />
+      <div style={{ display: "flex", justifyContent: "center" }}>
+        <Input.Search
+          className="search__input"
+          placeholder="Поиск по VIN-коду..."
+          value={searchValue}
+          onChange={(e) => setSearchValue(e.target.value)}
+        />
+      </div>
 
-      <div className="block">{products}</div>
+      <div className="esesse">
+        {parts.map((item) => (
+          <SearchCart key={item.id} item={item} />
+        ))}
+      </div>
     </div>
   );
 };
