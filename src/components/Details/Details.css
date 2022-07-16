@@ -74,8 +74,9 @@
   margin: 0 auto;
   text-align: center;
   position: relative;
-  top: 10vh;
+  top: 11vh;
   transform: translateY(-50%);
+  /* background-color: rgba(0, 0, 0, 0.5); */
 }
 
 .spinner {

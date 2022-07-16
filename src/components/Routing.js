@@ -10,12 +10,15 @@ import Categories from "./Categories/Categories";
 import HeaderTop from "./HeaderTop/HeaderTop";
 import AboutUs from "./AboutUs/AboutUs";
 import Contacts from "./Contacts/Contacts";
-import AdminPage from "./AdminPage/AdminPage";
 import PartsList from "./PartsList/PartsList";
 import Support from "./Support/Support";
 import Models from "./Models/Models";
 import Details from "./Details/Details";
 import Cart from "./ModelsCart/Cart";
+import SearchByVin from "./SearchByVin/SearchByVin";
+import Favorites from "./Favorites/Favorites";
+import OneCategory from "./OneCategory/OneCategory";
+import QA from "./QA/QA";
 
 const Routing = () => {
   return (
@@ -23,18 +26,21 @@ const Routing = () => {
       <HeaderTop />
       <Header />
       <Routes>
-        <Route path="/admin" element={<AdminPage />} />
-
+        <Route path="/favorites" element={<Favorites />} />
+        <Route path="/category/:id" element={<OneCategory />} />
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Forma />} />
         <Route path="/tools" element={<ToolsofBmw />} />
         <Route path="/models/:id/categories/:id" element={<Categories />} />
+
         <Route path="/details/:id" element={<Details />} />
         <Route path="/about" element={<AboutUs />} />
         <Route path="/contacts" element={<Contacts />} />
         <Route path="/guarentees" element={<Guearentees />} />
         <Route path="/models/:id" element={<Models />} />
         <Route path="/cartModels" element={<Cart />} />
+        <Route path="/search" element={<SearchByVin />} />
+        <Route path="/qa" element={<QA />} />
 
         <Route
           path="/models/:id/categories/:id/parts/:id"

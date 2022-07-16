@@ -16,14 +16,24 @@
     width: 180px;
   }
 }
+@media (max-width: 445px) {
+  .catalog-link img {
+    width: 170px;
+  }
+}
 @media (max-width: 426px) {
   .catalog-link img {
-    width: 130px;
+    width: 150px;
+  }
+}
+@media (max-width: 370px) {
+  .catalog-link img {
+    width: 300px;
   }
 }
 @media (max-width: 320px) {
   .catalog-link img {
-    width: 250px;
+    width: 125px;
   }
 }
 .catalog-link:hover {

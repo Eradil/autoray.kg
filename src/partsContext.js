@@ -50,10 +50,10 @@ const PartsContextProvider = ({ children }) => {
 
   async function getAllModels() {
     let { data } = await axios.get(`${API}/car_models/`);
-    console.log(data);
     dispatch({
       type: GET_ONE_MODEL,
       payload: data,
+      productsCount: 0,
     });
   }
 
@@ -61,7 +61,7 @@ const PartsContextProvider = ({ children }) => {
     let { data } = await axios.get(
       `${API}/good_categories/` + window.location.search
     );
-    console.log(data);
+
     dispatch({
       type: GET_ONE_CATEGORY,
       payload: data,
@@ -69,7 +69,7 @@ const PartsContextProvider = ({ children }) => {
   }
 
   async function getAllParts() {
-    let { data } = await axios(`${API}/goods/`);
+    let { data } = await axios(`${API}/goods/` + window.location.search);
     dispatch({
       type: GET_ALL,
       payload: data,
@@ -92,6 +92,7 @@ const PartsContextProvider = ({ children }) => {
         category: state.category,
         parts: state.parts,
         onePart: state.onePart,
+        productsCount: state.productsCount,
         getAllBrands,
         getAllModels,
         getAllCategories,

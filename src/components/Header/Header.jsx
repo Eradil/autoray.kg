@@ -2,9 +2,11 @@ import React, { useState } from "react";
 import "./Header.css";
 import image1 from "../Images/logo11.svg";
 import image2 from "../Images/search.png";
-import image3 from "../Images/menu.png";
+import image3 from "../Images/down.png";
 import image4 from "../Images/account.png";
-import image5 from "../Images/close.png";
+import image5 from "../Images/close123.svg";
+import image11 from "../Images/menu.png";
+
 import { Link, useLocation } from "react-router-dom";
 import { categories } from "../../helpers/categorie";
 import { useContext } from "react";
@@ -12,34 +14,6 @@ import { partContext } from "../../partsContext";
 import { useEffect } from "react";
 import { HeartOutlined, SearchOutlined } from "@ant-design/icons";
 import { Button, Tooltip } from "antd";
-
-const brands = [
-  {
-    name: "BMW",
-    id: 1,
-    link: "/bmw",
-  },
-  {
-    name: "Mersedes - Benz",
-    id: 2,
-    link: "/mersedes",
-  },
-  {
-    name: "Lexus",
-    id: 3,
-    link: "/Lexus",
-  },
-  {
-    name: "Toyota",
-    id: 4,
-    link: "/toyota",
-  },
-  {
-    name: "Mazda",
-    id: 5,
-    link: "/Mazda",
-  },
-];
 
 const NAVBAR_ITEMS = [
   {
@@ -53,11 +27,6 @@ const NAVBAR_ITEMS = [
     id: 2,
   },
   {
-    title: "Категории",
-    link: "/categories",
-    id: 3,
-  },
-  {
     title: "Контакты",
     link: "/contacts",
     id: 4,
@@ -67,18 +36,14 @@ const NAVBAR_ITEMS = [
     link: "/guarentees",
     id: 5,
   },
-  {
-    title: "Maрки",
-    link: "/cartModels",
-    id: 6,
-  },
 ];
 
 const Header = () => {
   const [features, setFeatures] = useState(false);
   const [all, setAll] = useState(false);
   const [active, setActive] = useState("header2-block4");
-  const { brands, getAllBrands } = useContext(partContext);
+  const { brands, category, getAllBrands, getAllCategories } =
+    useContext(partContext);
   useEffect(() => {
     getAllBrands();
   }, []);
@@ -88,6 +53,7 @@ const Header = () => {
       : setActive("header2-block4");
   };
   const location = useLocation();
+
   return (
     <>
       <div className="header">
@@ -99,13 +65,19 @@ const Header = () => {
               </Link>
             </div>
             <div className="header1-block2">
-              <Tooltip placement="bottom" title="Избранное">
-                <HeartOutlined className="HeartFilled" />
-              </Tooltip>
+              <Link className="favorites_link" to="/favorites">
+                <Tooltip placement="bottom" title="Избранное">
+                  <HeartOutlined className="HeartFilled" />
+                </Tooltip>
+              </Link>
 
-              <Link to="/#">
+              <Link to="/search">
                 <Tooltip placement="bottom" title="поиск по VIN-code">
-                  <Button icon={<SearchOutlined />} size="large">
+                  <Button
+                    className="header_search_1"
+                    icon={<SearchOutlined />}
+                    size="large"
+                  >
                     Поиск
                   </Button>
                 </Tooltip>
@@ -125,9 +97,11 @@ const Header = () => {
               {all ? (
                 <div className="all">
                   {categories.map((item) => (
-                    <span key={item.id} className="all-link">
-                      {item.title}
-                    </span>
+                    <Link to={`/category/${item.id}`}>
+                      <h4 key={item.id} className="all-link">
+                        {item.title}
+                      </h4>
+                    </Link>
                   ))}
                 </div>
               ) : null}
@@ -135,16 +109,10 @@ const Header = () => {
 
             <div className="header2-block2">
               <div className="header-media">
-                <input
-                  className="header-input2"
-                  type="text"
-                  placeholder="Поиск ..."
-                />
-                <img className="header-search-img2 " src={image2} alt="" />
                 <img
                   onClick={navToggle}
                   className="burger-block2"
-                  src={image3}
+                  src={image11}
                   alt=""
                 />
               </div>
@@ -158,6 +126,10 @@ const Header = () => {
 
                 {NAVBAR_ITEMS.map((navLink) => (
                   <Link
+                    onClick={() => {
+                      navToggle();
+                      setAll(false);
+                    }}
                     className={
                       location.pathname === navLink.link
                         ? "header2-active"

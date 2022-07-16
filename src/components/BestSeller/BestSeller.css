@@ -36,7 +36,7 @@
 .BestSeller-img {
   width: 270px;
   height: 270px;
-  background: radial-gradient(red, black);
+  background: radial-gradient(#ec8, #1bd);
   display: flex;
   justify-content: center;
   align-items: center;

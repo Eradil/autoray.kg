@@ -1,10 +1,10 @@
 import React, { useContext, useEffect } from "react";
-import { useLocation, useSearchParams } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { partContext } from "../../partsContext";
 import ToolsofBmw from "../ToolsofBmw/ToolsofBmw";
+import "./PartList.css";
 
 const PartsList = () => {
-  const [searchParams, setSearchParams] = useSearchParams();
   const { parts, getAllParts } = useContext(partContext);
   const location = useLocation();
   let loc = location.pathname.slice(29, location.pathname.length);
@@ -16,7 +16,6 @@ const PartsList = () => {
   let arr = local.join("");
   let arr1 = parseInt(arr);
 
-
   useEffect(() => {
     getAllParts();
   }, []);
@@ -26,12 +25,14 @@ const PartsList = () => {
   }, []);
 
   return (
-    <div>
-      {parts?.map((item) =>
-        item.category == arr1 && item.car_model == regex ? (
-          <ToolsofBmw key={item.id} item={item} />
-        ) : null
-      )}
+    <div className="container">
+      <div className="divskiy">
+        {parts?.map((item) =>
+          item.category == arr1 && item.car_model == regex ? (
+            <ToolsofBmw key={item.id} item={item} />
+          ) : null
+        )}
+      </div>
     </div>
   );
 };

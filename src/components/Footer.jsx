@@ -1,5 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Footer.css";
+import { categories } from "../helpers/categorie";
 
 const Footer = () => {
   return (
@@ -19,8 +21,18 @@ const Footer = () => {
                       </li>
                       <li>
                         <span class="icon pe-7s-call"></span>
-                        <a className="forText" href="tel:+996501081998">
-                          +996 (501) 081-998
+                        <a className="forText" href="tel:+996504253345">
+                          +996 (504) 253-345
+                        </a>
+                      </li>
+                      <li>
+                        <a className="forText" href="tel:+996880253545">
+                          +996 (880) 253-545
+                        </a>
+                      </li>
+                      <li>
+                        <a className="forText" href="tel:+996221253545">
+                          +996 (221) 253-545
                         </a>
                       </li>
                       <li>
@@ -47,16 +59,16 @@ const Footer = () => {
                       <div class="modcontent">
                         <ul class="menu">
                           <li>
-                            <a href="#">О нас</a>
+                            <a href="/about">О нас</a>
                           </li>
                           <li>
-                            <a href="#">Контакты</a>
+                            <a href="/contacts">Контакты</a>
                           </li>
                           <li>
-                            <a href="#">Гарантии</a>
+                            <a href="/guarentees">Гарантии</a>
                           </li>
                           <li>
-                            <a className="forText" href="tel:+996501081998">
+                            <a className="forText" href="tel:+996504253345">
                               Поддержка 24/7
                             </a>
                           </li>
@@ -65,7 +77,7 @@ const Footer = () => {
                     </div>
                   </div>
                 </div>
-                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 col-style">
+                {/* <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 col-style">
                   <div class="box-account box-footer">
                     <div class="module clearfix">
                       <h3 class="modtitle">Основные партнеры</h3>
@@ -90,32 +102,21 @@ const Footer = () => {
                       </div>
                     </div>
                   </div>
-                </div>
+                </div> */}
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 col-clear">
                   <div class="box-service box-footer">
                     <div class="module clearfix">
                       <h3 class="modtitle">Категории</h3>
                       <div class="modcontent">
-                        <ul class="menu">
-                          <li>
-                            <a href="#">Тормозная система</a>
-                          </li>
-                          <li>
-                            <a href="#">Бачки, Патрубки,воздуховоды</a>
-                          </li>
-                          <li>
-                            <a href="#">Системы Кондиционироания</a>
-                          </li>
-                          <li>
-                            <a href="#">Топливная система</a>
-                          </li>
-                          <li>
-                            <a href="#">Стекла</a>
-                          </li>
-                          <li>
-                            <a href="#">Электроника</a>
-                          </li>
-                        </ul>
+                        {categories.slice(5, 11).map((item) => (
+                          <ul class="menu">
+                            <Link to={`/category/${item.id}`}>
+                              <li key={item.id} className="footer__liteg">
+                                {item.title}
+                              </li>
+                            </Link>
+                          </ul>
+                        ))}
                       </div>
                     </div>
                   </div>
@@ -130,20 +131,19 @@ const Footer = () => {
               <div class="copyright col-lg-8 col-md-8 col-sm-12 col-xs-12">
                 <p>
                   Autoray © 2022. All Rights Reserved. Designed by
-                  <a class="pixel" href="http://pixeldevs.club/">
+                  <a
+                    class="pixel"
+                    target={"_blank"}
+                    href="http://pixeldevs.club/"
+                  >
                     pixeldevs.club
                   </a>
                 </p>
               </div>
-              <div class="payment-w col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                {/* <img src="image/catalog/demo/payment/payment.png" alt="imgpayment"> */}
-              </div>
+              <div class="payment-w col-lg-4 col-md-4 col-sm-12 col-xs-12"></div>
             </div>
           </div>
         </div>
-        {/* <div class="back-to-top">
-          <i class="fa fa-angle-up"></i>
-        </div> */}
       </footer>
     </div>
   );

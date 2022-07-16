@@ -31,21 +31,26 @@ const Contacts = () => {
             <span className="forText">г. Бишкек, Рынок "Кудайберген"</span>
           </div>
           <div className="inner-bottom-card">
+            <HomeFilled className="social_icon" />
+            <span className="forText">г. Бишкек, 192 ул. Киевская</span>
+          </div>
+
+          <div className="inner-bottom-card">
             <PhoneFilled className="social_icon" />
             <a className="forText" href="tel:+996551081998">
-              +996 (551) 081-998
+              +996 (504) 253-345
             </a>
           </div>
           <div className="inner-bottom-card">
             <PhoneFilled className="social_icon" />
             <a className="forText" href="tel:+996501081998">
-              +996 (501) 081-998
+              +996 (880) 253-545
             </a>
           </div>
           <div className="inner-bottom-card">
             <WhatsAppOutlined className="social_icon" />
 
-            <a className="forText" href="https://wa.me/996501081998">
+            <a className="forText" href="https://wa.me/996504253345">
               Мы в WhatsApp
             </a>
           </div>
@@ -62,7 +67,7 @@ const Contacts = () => {
           <div className="inner-bottom-card">
             <MailFilled className="social_icon" />
 
-            <a className="forText" href="/#">
+            <a className="forText" href="mailto:Autoray312@gmail.com">
               Наша почта
             </a>
           </div>
