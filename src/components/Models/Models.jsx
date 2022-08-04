@@ -8,7 +8,6 @@ const Models = () => {
     useContext(partContext);
   const location = useLocation();
   let loc = location.pathname.slice(8, location.pathname.length);
-
   useEffect(() => {
     getAllBrands();
   }, []);
@@ -23,6 +22,8 @@ const Models = () => {
     getAllModels();
     window.scrollTo(0, 0);
   }, [searchParams]);
+
+  console.log(models);
 
   return (
     <div className="container">

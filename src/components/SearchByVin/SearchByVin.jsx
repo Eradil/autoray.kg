@@ -1,4 +1,4 @@
-import { Input } from "antd";
+import { Button, Input } from "antd";
 import React, { useContext } from "react";
 import { useEffect } from "react";
 import { useState } from "react";
@@ -7,12 +7,11 @@ import { partContext } from "../../partsContext";
 import SearchCart from "./SearchCart";
 
 const SearchByVin = () => {
-  const { parts, getAllParts } = useContext(partContext);
+  const { parts, getAllParts, pages } = useContext(partContext);
   const [searchParams, setSearchParams] = useSearchParams();
   const [searchValue, setSearchValue] = useState(
     searchParams.get("q") ? searchParams.get("q") : ""
   );
-
   useEffect(() => {
     getAllParts();
   }, []);

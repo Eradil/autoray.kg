@@ -16,10 +16,8 @@ const PartsList = () => {
   let arr = local.join("");
   let arr1 = parseInt(arr);
 
-  useEffect(() => {
-    getAllParts();
-  }, []);
-
+  console.log(arr1);
+  console.log(regex);
   useEffect(() => {
     getAllParts();
   }, []);
@@ -29,7 +27,7 @@ const PartsList = () => {
       <div className="divskiy">
         {parts?.map((item) =>
           item.category == arr1 && item.car_model == regex ? (
-            <ToolsofBmw key={item.id} item={item} />
+            <ToolsofBmw key={item} item={item} />
           ) : null
         )}
       </div>
