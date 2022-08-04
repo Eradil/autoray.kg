@@ -1,12 +1,12 @@
 import React from "react";
 import { Carousel } from "antd";
 import "./Carouselll.css";
-import carousel1 from "../Images/carousel1.png";
-import carousel2 from "../Images/carousel2.png";
-import carousel3 from "../Images/carousel3.png";
-import carousel4 from "../Images/carousel1-320.png";
-import carousel5 from "../Images/carousel2-320.png";
-import carousel6 from "../Images/carousel3-320.png";
+import carousel1 from "../Images/carousel1.webp";
+import carousel2 from "../Images/carousel2.webp";
+import carousel3 from "../Images/carousel3.webp";
+import carousel4 from "../Images/carousel1-320.webp";
+import carousel5 from "../Images/carousel2-320.webp";
+import carousel6 from "../Images/carousel3-320.webp";
 
 const contentStyle = {
   height: "480px",

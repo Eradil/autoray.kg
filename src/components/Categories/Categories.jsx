@@ -1,21 +1,18 @@
 import React, { useContext, useEffect } from "react";
 import "./Categories.css";
 import { partContext } from "../../partsContext";
-import { Link, useLocation, useSearchParams } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { categories } from "../../helpers/categorie";
 
 const Categories = () => {
-  const [searchParams, setSearchParams] = useSearchParams();
-  const { category, getAllCategories } = useContext(partContext);
+  const { getAllCategories } = useContext(partContext);
   const location = useLocation();
+
   let loc = location.pathname.slice(21, location.pathname.length);
 
   let local = loc.match(/[0-9]/g);
   let arr = local.join("");
   let arr1 = parseInt(arr);
-  console.log(arr1);
-
-  console.log(arr1);
 
   useEffect(() => {
     getAllCategories();
